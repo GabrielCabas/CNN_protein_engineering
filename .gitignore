@@ -1,0 +1,4 @@
+__pycache__/
+models/
+*performance_results.csv
+*.json
