@@ -18,7 +18,6 @@ from arquitectures import Models
 
 
 #Constants
-MODELS_FOLDER = "models"
 DATASET_PATH = os.path.realpath(sys.argv[1])
 EPOCHS = int(sys.argv[2])
 ARQUITECTURE = sys.argv[3]
@@ -32,13 +31,6 @@ DATA_TYPE = DATASET_PATH.split("/")[-3]
 
 
 #AUX FUNCTIONS
-def create_folder(folder):
-    """Create folder"""
-    try:
-        os.mkdir(folder)
-    except FileExistsError:
-        pass
-
 def df_to_data(path):
     """Takes a path, reads the csv file and return data splitted"""
     datasets_list = pd.read_csv("datasets_list.csv")
@@ -69,7 +61,6 @@ def balance_data(data):
     return pd.concat(new_df)
 
 #MAIN
-create_folder(MODELS_FOLDER)
 
 time_inicio = time.time()
 (x_train, x_test, y_train, y_test), labels, task = df_to_data(DATASET_PATH)
