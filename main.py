@@ -1,5 +1,12 @@
 """
-python3 main.py ../Encoded-Datasets AMP_binary.csv pca 20
+python3 -W ignore main.py [df_path(.csv)] [epochs] [arquitecture] [output(.json)]
+
+arquitecture ["A", "B", "C", "D", "E", "F", "G", "H"]
+
+Example:
+
+python3 -W ignore main.py ../Encoded-Datasets/Protein/simple/esm-ARN_ADN_binding_single.csv 100 A A_esm-ARN_ADN_binding.json
+
 """
 import time
 import os
